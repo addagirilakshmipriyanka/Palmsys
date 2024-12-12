@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fac_web.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/help.css') }}" type="text/css">
+    <script src="{{ url_for('static', filename='js/fac_web.js') }}"></script>
+</head>
+<body>
+    <div class="h">
+        <div class="ch1"></div>
+        <div class="ch2">
+             <div><marquee>Faculty Profile</marquee>
+             </div>
+        </div>
+    </div>
+    <div class="nav">
+        <div class="navbar">
+            <div class="n1">
+                <button onclick="add()">Add Class</button>
+            </div>
+            <div class="n2">
+                <button onclick="upcoming()">Upcoming Classes</button>
+            </div>
+            <div class="n3">
+                <button onclick="help()" style="background-color: white;color:black;border-radius:20px;">Help</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="con">
+        <div class="out">
+            <div class="inn">
+                <form>
+                    <table>
+                        <tr>
+                            <td>Name</td>
+                            <td><input type="text" name="name" ></td>
+                        </tr>
+                        <tr>
+                            <td>ID NO</td>
+                            <td><input type="text" name="id_no"></td>
+                        </tr>
+                        <tr>
+                            <td>Phone </td>
+                            <td><input type="number" name="ph_no"></td>
+                        </tr>
+                        <tr>
+                            <td>Email ID</td>
+                            <td><input type="text" name="email"></td>
+                        </tr>
+                        <tr style="height:90px;">
+                            <td style="height:15px;">Comment</td>
+                            <td><textarea rows="4" cols="20"></textarea></td>
+                        </tr>
+                        <tr >
+                            <td colspan="2" style="text-align:center;"><button value="submit" class="submit">Submit </button></td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>

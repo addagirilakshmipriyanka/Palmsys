@@ -1,0 +1,67 @@
+.extra{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('five.jpg');   
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    animation:hello 12s ease-in-out 2s infinite normal;
+    animation-direction: reverse; 
+}
+@keyframes hello{
+    0%{
+        background-image: url('one.jpg');
+    }
+    25%{
+        background-image: url('two.jpg');
+    }
+    50%{
+        background-image: url('three.jpg');
+    }
+    75%{
+        background-image: url('four.jpg');
+    }
+    100%{
+        background-image: url('five.jpg');
+    }
+}
+.outer{
+    margin:18%;
+    border:1px solid rgb(18, 2, 255);
+    border-radius: 10px;
+    width:33%;
+    height:350px;
+    align-self: center;
+    background-color:rgba(255,255,255,0.3);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-wrap: wrap;
+}
+.heading{
+    margin-top:15px;
+    color:rgb(3, 3, 3);
+    text-align: center;
+    font-size:60px;
+    opacity: 1;
+}
+.middle{
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    flex-wrap: wrap;
+}
+.inner{
+    color:rgb(250, 248, 248);
+    font-size: 25px;
+    padding:12px 10px 12px 10px; 
+    text-align: center;
+    margin: 20px;
+    background-color: rgba(28, 103, 201, 0.9);
+    border:1px solid blue;
+}
+.inner:hover{
+   padding: 14px 10px 14px 10px ;
+   
+}

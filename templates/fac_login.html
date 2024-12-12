@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <script src="{{ url_for('static', filename='js/click.js') }}"></script>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner">
+            <div class="heading"><h2>LOG IN AS FACULTY</h2></div><br><br>
+            {% if message %}
+            <div class="alert">{{ message }}</div>
+            {% endif %}
+            <form class="details" method="POST" action="/faculty_login" onsubmit="return faculty();">
+                <label for="id">ID NO
+                    <input type="text" id="id" class="user_name" name="id_no" required>
+                </label><br><br><br>
+                <label for="pass">PASSWORD
+                    <input type="password" id="pass" name="pass" class="password" required>
+                </label><br><br><br>
+                <input type="submit" value="Submit" class="submit" name="submit"><br><br><br> 
+            </form>
+        </div>
+    </div>
+    <script>
+        function faculty() {
+            event.preventDefault();  // Prevent default form submission
+
+            const id_no = document.querySelector('input[name="id_no"]').value;
+            const password = document.querySelector('input[name="pass"]').value;
+
+            fetch('/faculty_login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `id_no=${encodeURIComponent(id_no)}&pass=${encodeURIComponent(password)}`
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.redirect) {
+                    window.location.href = data.redirect;  // Redirect if login is successful
+                } else if (data.error) {
+                    alert(data.error);  // Display error message
+                }
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</body>
+</html>

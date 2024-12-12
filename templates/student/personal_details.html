@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stu_web.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/personal_details.css') }}" type="text/css">
+    <script src="{{ url_for('static', filename='js/stu_web.js') }}"></script>
+</head>
+<body>
+    <div class="h">
+        <div class="ch1"></div>
+        <div class="ch2">
+            <div><marquee>Student Profile</marquee></div>
+        </div>
+    </div>
+    <div class="nav">
+        <div class="navbar">
+            <div class="n1">
+                <button onclick="check()">Check Attendance</button>
+            </div>
+            <div class="n2">
+                <button onclick="upcoming()">Upcoming Classes</button>
+            </div>
+            <div class="n5">
+                <button onclick="take_attendence()">Take Attendance</button>
+            </div>
+            <div class="n3">
+                <button onclick="help()">Help</button>
+            </div>
+            <div class="n4">
+                <button onclick="details()" style="background-color: white;color:black;border-radius:20px;">Personal Details</button>
+            </div>
+        </div>
+    </div>
+    <div class="con">
+        <div class="body"> 
+            <div class="primary">
+                <div class="photo_details">
+                    <img src="{{ url_for('static', filename='StudentImages/' + student['photo']) }}" alt="Profile Photo" style="width:200px;height:200px;border-radius:50%;">
+                </div>
+                
+                <div class="main_details">
+                    <div class="sub_name">{{ student['first_name'] }} {{ student['middle_name'] }} {{ student['last_name'] }}</div>
+                    <div class="roll">{{ student['student_id'] }}</div>
+                </div>
+            </div>
+            <div class="secondary"> 
+                <div class="other_details">
+                    <div class="personal_details">
+                        <div class="s1" style="background-color: rgba(128, 128, 128,0.6);font-size:25px;font-weight:600;">
+                            <div>Personal Details</div>
+                        </div>
+                        <div class="s1">
+                            <div class="inns1">DOB</div>
+                            <div class="inns1">{{ student['dob'] }}</div>
+                        </div>
+                        <div class="s1">
+                            <div class="inns1">Gender</div>
+                            <div class="inns1">{{ student['gender'] }}</div>
+                        </div>
+                        <div class="s1">
+                            <div class="inns1">Phone Number</div>
+                            <div class="inns1">{{ student['phone_number'] }}</div>
+                        </div>
+                        <div class="s1">
+                            <div class="inns1">Email</div>
+                            <div class="inns1">{{ student['email'] }}</div>
+                        </div>
+                        <div class="s1">
+                            <div class="inns1">Father's Name</div>
+                            <div class="inns1">{{ student['father_name'] }}</div>
+                        </div>
+                        <div class="s1">
+                            <div class="inns1">Mother's Name</div>
+                            <div class="inns1">{{ student['mother_name'] }}</div>
+                        </div>
+                        <div class="s1" style="border:0px">
+                            <div class="inns1">Address</div>
+                            <div class="inns1">{{ student['street_address'] }}, {{ student['city'] }}, {{ student['state'] }}, {{ student['country'] }} - {{ student['zip_code'] }}</div>
+                        </div>
+                    </div>
+                    <div class="academic_details">
+                        <div class="s1" style="background-color: rgba(128, 128, 128,0.6);font-size:25px;font-weight:600;">
+                            <div>Academic Details</div>
+                        </div>
+                        <div class="s1">
+                            <div class="inns1">Student ID</div>
+                            <div class="inns1">{{ student['student_id'] }}</div>
+                        </div>
+                        <div class="s1">
+                            <div class="inns1">Hall Ticket Number</div>
+                            <div class="inns1">{{ student['hall_ticket_number'] }}</div>
+                        </div>
+                        <div class="s1">
+                            <div class="inns1">Year</div>
+                            <div class="inns1">{{ student['year'] }}</div>
+                        </div>
+                        <div class="s1">
+                            <div class="inns1">Semester</div>
+                            <div class="inns1">{{ student['semester'] }}</div>
+                        </div>
+                        <div class="s1">
+                            <div class="inns1">Branch</div>
+                            <div class="inns1">{{ student['branch'] }}</div>
+                        </div>
+                        <div class="s1">
+                            <div class="inns1">Section</div>
+                            <div class="inns1">{{ student['section'] }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

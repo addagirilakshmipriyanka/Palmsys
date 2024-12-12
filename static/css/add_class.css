@@ -1,0 +1,58 @@
+.outer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:100%;
+    }
+.inner{
+    margin-top: 30px;
+    display:flex;
+    flex-direction: column;
+}
+table{
+    row-gap: 30px;
+}
+td{
+    text-align: center;   
+}
+.hide{
+    display: none;
+}
+h1{
+    text-align:center;
+    color:rgb(17, 15, 15);
+}
+.con{
+     background-color: rgba(165, 42, 42,0.2); 
+    font-family:'Times New Roman', Times, serif;
+    font-weight: 1000;
+    margin-top:20px;
+}
+input,select{
+    border:1.5px solid rgb(5, 5, 5);
+    border-radius: 20px;
+    height:30px;
+    width:250px;
+}
+select,.submit{
+    text-align:center;
+    width:200px;
+    color:brown; 
+    font-weight:700;
+    font-size:1.01rem;
+}
+.submit{
+    background-color: brown;
+    color:white;
+    margin-top:20px;
+    width:130px;
+}
+.i1,.i2,.i3,.i4,.i5{
+    display: flex;
+    width:auto;
+    column-gap:20px;
+    align-items: center;
+    justify-content: space-evenly;
+    height:60px;
+    flex-wrap:wrap;
+}

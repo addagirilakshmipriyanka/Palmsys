@@ -1,0 +1,67 @@
+.header{
+    width:100%;
+    padding:10px;
+}
+.h{
+    display:flex;
+    width:100%;
+}.ch1{
+    width:25%;
+    background-image: url('photo.jpeg');
+    background-size:cover;
+    background-repeat: no-repeat;
+    height:150px;
+}
+.ch2{
+    /* background-image:url('stu2.jpg'); */
+    background-color: rgb(165, 42, 42);
+    width:75%;
+    animation:cc 7s ease-in 3s infinite alternate-reverse;
+    padding-top:55px;
+    font-weight: bold;
+    font-size:65px;
+    display:flex;
+    justify-content:center ;
+}
+@keyframes cc {
+    0%{color:white;}
+    50%{color:black;}
+    100%{color:white;}
+}
+.nav{
+    margin-top:20px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.navbar{
+    padding:10px;
+    padding-left: 150px;
+    padding-right: 150px;
+    background-color: rgba(165, 42, 42,0.9);
+    color:white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap:30px;
+    border-radius: 30px;
+    flex-wrap: wrap;
+}
+button{
+    padding:7px;
+    background-color: transparent;
+    font-size:20px;
+    color:white;
+    border:1px solid black;
+    border-radius:20px;
+    padding-left:20px;
+    padding-right:20px;
+}
+button:hover,butt:hover,button:hover,button:hover{
+    background-color: white;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    color:black;
+}

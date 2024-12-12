@@ -1,0 +1,64 @@
+.external {
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+.con {
+    background-color: rgba(165, 42, 42, 0.2); 
+    margin-top: 20px;
+}
+
+.internal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 50px;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+.header {
+    display: flex; /* Keep the flex layout */
+    justify-content: space-between; /* Space the items evenly */
+    align-items: center; /* Center align vertically */
+    padding: 5px 25px; /* Combined padding for simplicity */
+    border-radius: 20px;
+    background-color: rgba(250, 248, 248, 0.8);
+    height: 80px;
+    width: 100%; /* Use full width of the parent container */
+    max-width: 480px; /* Set a max width for uniformity */
+    font-size: 2rem;
+    color: rgb(10, 9, 9);
+    font-weight: 400;
+    box-shadow: 1px 1px 10px rgba(231, 216, 216, 0.31);
+}
+
+.one, .two, .three {
+    flex: 1; /* Allow each column to take equal space */
+    font-size: 2rem;
+    padding: 3px;
+    text-align: center; /* Center align text within each column */
+}
+
+.head {
+    position: sticky;
+    margin-top: 0;
+    background-color: aquamarine;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 25px; /* Combined padding for simplicity */
+    border-radius: 20px;
+    height: 80px;
+    width: 100%; /* Use full width of the parent container */
+    max-width: 480px; /* Set a max width for uniformity */
+    font-size: 1.2rem;
+    color: rgb(10, 9, 9);
+    font-weight: 700;
+    box-shadow: 1px 1px 10px rgba(231, 216, 216, 0.31);
+}

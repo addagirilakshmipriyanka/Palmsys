@@ -1,0 +1,50 @@
+body{
+    font-size:1.5rem;
+    margin-top:10px;
+    background-color: rgba(165, 42, 42,0.2); 
+    height:100%;
+    margin:auto;
+}
+.con{
+    padding-left:20px;
+    padding-right:20px;
+}
+.content{
+    display:flex;
+    justify-content:center;
+    flex-direction:column;
+    margin-top: 20px;
+}
+.row{
+    padding:9px;
+    display: flex;
+    justify-content:space-evenly;
+    flex-direction:row;
+}
+.head{
+    background-color: rgba(165, 42, 42,0.8);
+}
+.name,.id,.ph,.email,.problem,.verify{
+    word-break: break-word;
+    padding-left:10px;
+    /* border-left:0.1px solid gray; */
+}
+.name{
+    width:15%;
+}
+.id{
+    width:10%;
+}
+.ph{
+    width:10%;
+}
+.email{
+    width:20%;
+}
+.problem{
+    width:45%;
+    
+}
+.verify{
+    width:10%
+}

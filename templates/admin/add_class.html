@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Class</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin_web.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/add_class.css') }}" type="text/css">
+    <script src="{{ url_for('static', filename='js/admin_web.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/add_class.js') }}"></script> 
+</head>
+</head>
+<body>
+    <div class="h">
+        <div class="ch1"></div>
+        <div class="ch2">
+             <div><marquee>Faculty Profile</marquee></div>
+        </div>
+    </div>
+    <div class="nav">
+        <div class="navbar">
+            <div class="n1">
+                <button onclick="check()">Check Attendance</button>
+            </div>
+            <div class="n2">
+                <button onclick="upcoming()">Upcoming Classes</button>
+            </div>
+            <div class="n3">
+                <button onclick="add()" style="background-color: white;color:black;border-radius:20px;">Add Class</button>
+            </div>
+            <div class="n4">
+                <button onclick="register()">Register</button>
+                
+            </div>
+            <div class="n5">
+                <button onclick="queries()">Queries</button>    
+            </div>
+        </div>
+    </div>
+    <div class="con">
+        <div class="outer">
+            <div class="inner">
+                <h1>ADD A CLASS</h1>
+                <!-- Form submission to /add_class -->
+                <form action="{{ url_for('add_class1') }}" method="POST" onsubmit="return validateForm()"> 
+                    <div class="i1">
+                        <div>FACULTY NAME</div>
+                        <input type="text" name="fac_name" required>
+                    </div>
+                    <div class="i2">
+                        <div>SUBJECT NAME</div>
+                        <input type="text" name="sub_name" required>
+                    </div> 
+                        <div class="i4">    
+                            <div>TIMINGS</div>
+                            <input type="text" name="start_time" placeholder="start time" required>
+                            <input type="text" name="end_time" placeholder="end time" required>
+                        </div>
+                    <div class="i5">
+                        <input type="submit" class="submit" value="ADD">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Optional: Form validation function
+        function validateForm() {
+            // Add any validation logic here
+            return true; // Return true to allow form submission
+        }
+    </script>
+</body>
+</html>

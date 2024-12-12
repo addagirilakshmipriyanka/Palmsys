@@ -1,0 +1,38 @@
+.out{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+}
+tr{
+    height:50px;
+}
+td{
+    font-size:1.3rem;
+    font-weight:545;
+}
+input{
+    border:0px;
+    height:28px;
+    border-radius:20px;
+    width:220px;
+}
+textarea{
+    border:0px;
+    border-radius:20px;
+    width:220px;
+}
+button{
+    color:white;
+    border:1px solid black;
+    border-radius:20px;
+    padding-left:20px;
+    padding-right:20px;
+
+}
+.con{
+    background-color:rgba(31, 121, 128,0.4);  ;
+    margin-top:20px;
+}
+.submit{
+    color:black;
+}

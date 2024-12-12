@@ -1,0 +1,28 @@
+.header{
+    height:100px;
+    border:2px solid black;
+}
+.navbar{
+    background-color: blue;
+    color:white;
+    display:flex;
+    justify-content: center;
+    /* height:20px; */
+    padding-top:10px;
+    padding-bottom: 10px;
+}
+ul{
+    display:flex;
+}
+a{
+    font-size: 19px;
+    color:rgb(248, 248, 248);
+    text-decoration: none;
+    margin-right:70px;
+}
+
+
+.footer{
+    margin-bottom: 3px;
+    color:blue;
+}

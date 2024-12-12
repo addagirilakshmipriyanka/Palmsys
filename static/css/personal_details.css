@@ -1,0 +1,68 @@
+.con{
+    margin-top:20px;
+    background-color: rgba(6, 6, 240, 0.21);
+    display:flex;
+    justify-content: center;
+}
+.body{
+    display:flex;
+    margin-bottom:100px;
+    flex-direction:column;
+    width:100%;
+}
+.primary{
+    margin-top:10px;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    column-gap: 30px;
+}
+.main_details{
+    margin-top:50px;
+    display:flex;
+    flex-direction: column;
+}
+.photo_details{
+    height:200px;
+    width:200px;
+    border-radius:50%;
+    /*background-image: url('default_photo.png');*/
+    background-size: cover;
+}
+.sub_name{
+    font-weight:600;
+    font-size:32px;
+}
+.roll{
+    font-weight:500;
+    font-size:28px;   
+}
+.other_details{
+    margin-top:30px;
+    display: flex;
+    row-gap:10px;
+    font-size:22px;
+    justify-content: center;
+    column-gap: 50px;
+}
+.personal_details,.academic_details{
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    border:1px solid gray;
+    border-radius:10px;
+}
+.h{
+    background-color: azure;
+}
+.s1{
+    padding:15px;
+    padding-top:10px;
+    padding-bottom:10px;
+    border-bottom:1px solid gray;
+    display:flex;
+    width:400px;
+}
+.inns1{
+    width:200px;
+}

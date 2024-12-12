@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/admin_web.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}" type="text/css">
+    <script src="{{ url_for('static', filename='js/admin_web.js') }}"></script>
+</head>
+<body>
+    <div class="h">
+        <div class="ch1"></div>
+        <div class="ch2">
+            <div><marquee>ADMIN Profile</marquee></div>
+        </div>
+    </div>
+    <div class="nav">
+        <div class="navbar">
+            <div class="n1">
+                <button onclick="check()">Check Attendance</button>
+            </div>
+            <div class="n2">
+                <button onclick="upcoming()">Upcoming Classes</button>
+            </div>
+            <div class="n3">
+                <button onclick="add()">Add Class</button>
+            </div>
+            <div class="n4">
+                <button onclick="register()" style="background-color: white;color:black;border-radius:20px;">Register</button>    
+            </div>
+            <div class="n5">
+                <button onclick="queries()">Queries</button>    
+            </div>
+        </div>
+    </div>
+    <div class="con">
+        <form action="{{ url_for('register') }}" method="post" enctype="multipart/form-data">  <!-- Set action and method -->
+            <div class="stu_info">
+                <div class="head">Student Information</div>
+                <div class="names">
+                    <input type="text" name="first_name" placeholder="First Name" class="name" required>
+                    <input type="text" name="m_name" placeholder="Middle Name" class="name">
+                    <input type="text" name="l_name" placeholder="Last Name" class="name" required>
+                </div>
+                <div class="dob">
+                    <input type="text" name="dob" placeholder="Date of Birth" class="name" onfocus="(this.type='date')" required>
+                    <select name="gender" required>
+                        <option selected="selected" disabled="disabled" value="">Gender</option>
+                        <option value="M">Male</option>
+                        <option value="F">Female</option>
+                        <option value="O">Other</option>
+                    </select>
+                    <input type="text" name="Stu_id" placeholder="Student ID" class="name" required>
+                </div>
+                <div class="parent">
+                    <input type="text" name="f_name" placeholder="Father Name" class="date" required>
+                    <input type="text" name="m_name" placeholder="Mother Name" class="date" required>
+                </div>
+            </div>
+            <div class="address_info">
+                <div class="head">Address</div>
+                <div class="street">
+                    <input type="text" name="street_address" placeholder="Street Address" class="street1" required>
+                </div>
+                <div class="city_state">
+                    <input type="text" name="city" placeholder="City/Town" class="city_c" required>
+                    <input type="text" name="state" placeholder="State/Province" class="city_c" required>
+                </div>
+                <div class="country">
+                    <input type="text" name="country" placeholder="Country" class="city_c" required>
+                    <input type="text" name="ZIP_code" placeholder="ZIP Code" class="city_c" required>
+                </div>
+            </div>
+            <div class="contact_info">
+                <div class="head">Contact Information</div>
+                <div class="email">
+                    <input type="email" name="email" placeholder="Email" class="e_ph" required>
+                    <input type="text" name="ph_no" placeholder="Phone Number" class="e_ph" required>
+                </div>
+            </div>
+            <div class="academic_info">
+                <div class="head">Academic Information</div>
+                <div class="ac">
+                    <select name="Year" required>
+                        <option selected="selected" disabled="disabled" value="">Year</option>
+                        <option value="E1">E1</option>
+                        <option value="E2">E2</option>
+                        <option value="E3">E3</option>
+                        <option value="E4">E4</option>
+                    </select>
+                    <select name="Semister" required> <!-- Ensure names match -->
+                        <option selected="selected" disabled="disabled" value="">Semester</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                    </select>
+                    <select name="Branch" required>
+                        <option selected="selected" disabled="disabled" value="">Branch</option>
+                        <option value="CSE">CSE</option>
+                        <option value="ECE">ECE</option>
+                        <option value="EEE">EEE</option>
+                        <option value="MECH">MECH</option>
+                        <option value="CIVIL">CIVIL</option>
+                    </select>
+                    <select name="Section" required>
+                        <option selected="selected" disabled="disabled" value="">Section</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+                <div class="ht_photo">
+                    <input type="text" name="ht_no" class="date" placeholder="Hall Ticket Number" required>
+                    <input type="file" name="p_photo" accept="image/*" class="date" required>
+                </div>
+            </div>
+            <div class="buttons">
+                <input type="reset" name="reset" value="Reset" class="s_r">
+                <input type="submit" id="registerButton" name="submit" value="Submit" class="s_r">
+            </div>
+        </form>
+    </div>
+    <script>
+        document.getElementById("registerButton").onclick = function(event) {
+            event.preventDefault();  // Prevent default form submission
+    
+            const form = document.querySelector("form");
+            const formData = new FormData(form);  // Gather form data, including files
+    
+            fetch("{{ url_for('register') }}", {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert(data.success);  // Display success message
+                } else {
+                    alert(data.error);  // Display error message
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        };
+    </script>
+    
+</body>
+</html>

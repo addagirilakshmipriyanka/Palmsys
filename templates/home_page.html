@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home_page.css') }}" type="text/css">
+    <script src="{{ url_for('static', filename='js/home_page.js') }}"></script>
+</head>
+<body>
+    <div class="extra">
+        <div class="outer">
+            <div class="heading">LOGIN AS</div>
+            <div class="middle">
+                <div><input type="submit" value="STUDENT" class="inner" onclick="student()"></div> 
+                <div><input type="submit" value="HOD/ADMIN" class="inner" onclick="admin()"></div> 
+            </div>
+        </div>
+    </div>
+</body>
+</html>

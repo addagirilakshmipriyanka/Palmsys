@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Attendance</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/stu_web.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/check_attendence.css') }}" type="text/css">
+    <script src="{{ url_for('static', filename='js/stu_web.js') }}"></script>
+</head>
+<body> 
+    <div class="h">
+        <div class="ch1"></div>
+        <div class="ch2">
+            <div><marquee>Student Profile</marquee></div>
+        </div>
+    </div>
+    <div class="nav">
+        <div class="navbar">
+            <div class="n1"><button onclick="check()">Check Attendance</button></div>
+            <div class="n2"><button onclick="upcoming()">Upcoming Classes</button></div>
+            <div class="n5"><button onclick="take_attendance()">Take Attendance</button></div>
+            <div class="n3"><button onclick="help()">Help</button></div>
+            <div class="n4"><button onclick="details()">Personal Details</button></div>
+        </div>
+    </div>
+
+    <div class="con">
+        <h2>Check Today's Attendance</h2>
+        <div class="outer">
+            <div>ID: {{ session.student_id }}</div>
+            <div class="inner">
+                <div class="head high">
+                    <div class="j">Subject</div>
+                    <div class="k">Status</div>
+                </div>
+                {% for record in today_attendance %}
+                <div class="high">
+                    <div class="j">{{ record.class_id }}</div> <!-- Show class_id temporarily; replace with subject name in your logic -->
+                    <div class="k">{{ record.status | capitalize }}</div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class="pie_chart">
+                <h3>Attendance Percentage by Subject</h3>
+                <img src="{{ url_for('static', filename='images/attendance_pie_chart.png') }}" alt="Attendance Pie Chart">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
